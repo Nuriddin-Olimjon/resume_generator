@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/iconly/bold.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/perfect-scrollbar/perfect-scrollbar.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/app.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+
+</head>
+
+<body>
+    <div id="app">
+        <div id="main" style="margin-left: 0;">
+            <header class="mb-3 d-block d-xl-none">
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </header>
+
+            <div class="mb-3" id="search">
+                <div class="row align-items-center">
+                    <div class="col-12 text-center p-4">
+                        <h1 class="text-white mb-0">Welcome to resume generator</h2>
+                    </div>
+                    <div class="col-12 text-center p-4 pt-0">
+                        {% if request.user.is_authenticated %}
+                        <div class="avatar avatar-xl me-3">
+                            <img src="{% static 'assets/images/faces/2.jpg' %}" alt="" srcset="">
+                        </div>
+                        <div class="avatar avatar-xl me-3">
+                            <a href="{% url 'logout' %}">
+                                <button class="btn btn-primary">Logout</button>
+                            </a>
+                        </div>
+                        {% else %}
+                        <div class="avatar avatar-xl me-3">
+                            <a href="{% url 'signup' %}">
+                                <button class="btn btn-primary">Registration</button>
+                            </a>
+                        </div>
+                        <div class="avatar avatar-xl me-3">
+                            <a href="{% url 'login' %}">
+                                <button class="btn btn-primary">Login</button>
+                            </a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-content">
+                <section class="row">
+                    <div class="col-12">
+                        {% if request.user.is_authenticated %}
+                        {% else %}
+                        <div class="card bg-secondary">
+                            <div class="card-header text-center bg-secondary">
+                                <h2 class="text-white">Register or login to our website to use this template</h1>
+                            </div>
+                            <div class="card-content text-center pb-4">
+                                <a href="{% static 'resume_template.pdf' %}">
+                                    <img src="{% static 'template.png' %}" width="500px" alt="template">
+                                </a>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+
+</html>

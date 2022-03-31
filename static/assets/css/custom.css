@@ -1,0 +1,9 @@
+#search {
+    background-color: #557A95;
+    border-radius: 6px;
+}
+
+.search-button:hover {
+    background-color: #E6EEF5!important;
+    color: black!important;
+}
