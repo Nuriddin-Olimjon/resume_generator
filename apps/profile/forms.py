@@ -1,4 +1,3 @@
-from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import get_user_model
 
@@ -7,10 +6,6 @@ User = get_user_model()
 
 
 class SignUpForm(UserCreationForm):
-    # username = forms.RegexField(label='Username', max_length=30,
-    #                             regex=r'^[\w-]+$',
-    #                             error_message='This value must contain only letters, numbers, hyphens and underscores.')
-
     class Meta:
         model = User
         fields = (

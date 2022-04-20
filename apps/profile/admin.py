@@ -1,5 +1,5 @@
 from django.contrib import admin
-from main import models
+from apps.profile import models
 
 
 admin.site.register(models.User)

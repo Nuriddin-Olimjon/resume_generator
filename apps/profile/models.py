@@ -1,8 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-from main.utils import phone_regex
-from main.managers import CustomUserManager
+from utils.validators import phone_regex
+from apps.profile.managers import CustomUserManager
 
 
 class User(AbstractUser):

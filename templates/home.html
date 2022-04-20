@@ -21,11 +21,14 @@
 <body>
     <div id="app">
         <div id="main" style="margin-left: 0;">
-            <header class="mb-3 d-block d-xl-none">
-                <a href="#" class="burger-btn d-block d-xl-none">
-                    <i class="bi bi-justify fs-3"></i>
-                </a>
-            </header>
+
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-success alert-dismissible" role="alert">{{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
 
             <div class="mb-3" id="search">
                 <div class="row align-items-center">
