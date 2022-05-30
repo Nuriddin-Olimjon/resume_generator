@@ -43,8 +43,10 @@ INSTALLED_APPS = [
 
     'crispy_forms',
     'crispy_bootstrap5',
+    'rest_framework',
 
-    'apps.profile.apps.ProfileConfig'
+    'apps.profile.apps.ProfileConfig',
+    'apps.commands.apps.CommandsConfig',
 ]
 
 MIDDLEWARE = [
@@ -88,6 +90,13 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
 }
 
 
@@ -140,6 +149,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR/'static']
 # STATIC_ROOT = BASE_DIR / 'static'
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
 

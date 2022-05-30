@@ -1,0 +1,154 @@
+{% load static %}
+<html>
+
+<head>
+    <style>
+        @page {
+            size: A4; /* Change from the default size of A4 */
+            margin: 0 50px 0 50px; /* Set margin on each page */
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        h3, h4 {
+            margin: 0;
+            text-align: center;
+            line-height: 25px;
+        }
+        p {            
+            line-height: 25px;
+        }
+        .gerb {
+            margin-top: 50px;
+            text-align: center;
+        }
+        .org-name {
+            margin: 20px;
+            padding: 0 50px 0 50px;
+        }
+        .bill {
+            margin-left: 200px;
+        }
+        .line {
+            width: 100%;
+            border: 3px solid #525659;
+            border-radius: 2px;
+            display: block;
+        }
+        .info {
+            margin: 10px 0 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .text-body {
+            margin-top: 20px;
+        }
+        .cause {
+            padding: 30px 50px 0 50px;
+        }
+        .confirm {
+            padding: 75px 50px 0 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+        footer {
+            position: absolute;
+            width: 100%;
+            bottom: 10px;
+            color: #000;
+            padding-top: 3mm;
+            padding-bottom: 5mm;
+        }
+        .thin-line {
+            width: 100%;
+            border: 2px solid #525659;
+            border-radius: 2px;
+            display: block;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-info {
+            text-align: center;
+            font-size: 10px;
+            line-height: 5px;
+        }
+        .footer-qr {
+            width: 100px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gerb">
+        <img width="140px" src="{% static 'assets/images/gerb.png' %}" alt="">
+    </div>
+    <div class="org-name">
+        <h3>O'ZBEKISTON RESPUBLIKASI MOLIYA VAZIRLIGI AXBOROT TEXNOLOGIYALARI MARKAZI</h3>
+        <h3>BUYRUQ</h3>
+    </div>
+
+    <span class="line"></span>
+
+    <div class="info">
+        <p>2022-yil 30-mart</p>
+        <p>№ 26-sht</p>
+        <p>Toshkent sh.</p>
+    </div>
+
+    <h4 class="title">Mehnat shartnomasini bekor qilish to'g'risida</h3>
+
+    <div class="text-body">
+        <p>
+            &emsp; &emsp; <b>Aslonov Amirbek Nodirovich</b> - Davlat xaridlari sohasida foydalaniladigan Tovarlarni (ishlarning, xizmatlarning) yagona milliy 
+            klassifikatorini dasturiy ta’minotini yuritish bo‘limi yetakchi mutaxassisi bilan tuzilgan mehnat shartnomasi O‘zbekiston Respublikasi 
+            Mehnat kodeksining 99-moddasiga asosan 2022-yil 31-martdan bekor qilinsin.
+        </p>
+        <p>
+            &emsp; &emsp; Bosh buxgalter – Moliya va iqtisod bo‘limi boshlig‘i (F.Mengiyozov) ga Amirbek Aslonovning 2021-yil 22-noyabrdan 2022-yil 31-martgacha 
+            ishlagan davri uchun foydalanilmagan 8 ish kunidan iborat mehnat ta’tili uchun va haqiqiy ishlagan davri uchun hisob-kitob ishlarini 
+            amalga oshirish vazifasi yuklatilsin.
+        </p>
+    </div>
+
+    <div class="cause">
+        <b>Asos:</b> A. Aslonovning 2022-yil 30-martdagi arizasi.
+    </div>
+
+    <div class="confirm">
+        <h4>Direktor</h4>
+        <h4>I.Djumaniyozov</h4>
+    </div>
+
+    <footer>
+        <span class="thin-line"></span>
+        <div class="row">
+            <div class="uz-address">
+                <p class="footer-info">
+                    100017, Toshkent sh., Sharof Rashidov ko'chasi, 16
+                </p>
+                <p class="footer-info">
+                    Tel: (998 71) 202-07-12 (710)
+                </p>
+            </div>
+
+            <div class="footer-qr"></div>
+
+            <div class="en-address">
+                <p class="footer-info">
+                    100017, Tashkent, 16, Sharof Rashidov Str.
+                </p>
+                <p class="footer-info">
+                    Tel: (998 71) 202-07-12 (710)
+                </p>
+            </div>
+
+        </div>
+    </footer>
+    
+</body>
+
+</html>

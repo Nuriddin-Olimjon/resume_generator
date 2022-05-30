@@ -1,0 +1,151 @@
+{% load static %}
+<html>
+
+<head>
+    <style>
+        @page {
+            size: A4; /* Change from the default size of A4 */
+            margin: 0 50px 0 50px; /* Set margin on each page */
+        }
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        h3, h4 {
+            margin: 0;
+            text-align: center;
+            line-height: 25px;
+        }
+        p {            
+            line-height: 25px;
+        }
+        .gerb {
+            margin-top: 50px;
+            text-align: center;
+        }
+        .org-name {
+            margin: 20px;
+            padding: 0 50px 0 50px;
+        }
+        .bill {
+            margin-left: 200px;
+        }
+        .line {
+            width: 100%;
+            border: 3px solid #525659;
+            border-radius: 2px;
+            display: block;
+        }
+        .info {
+            margin: 10px 0 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .text-body {
+            margin-top: 20px;
+        }
+        .cause {
+            padding: 30px 50px 0 50px;
+        }
+        .confirm {
+            padding: 75px 50px 0 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+        footer {
+            position: absolute;
+            width: 100%;
+            bottom: 10px;
+            color: #000;
+            padding-top: 3mm;
+            padding-bottom: 5mm;
+        }
+        .thin-line {
+            width: 100%;
+            border: 2px solid #525659;
+            border-radius: 2px;
+            display: block;
+        }
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer-info {
+            text-align: center;
+            font-size: 10px;
+            line-height: 5px;
+        }
+        .footer-qr {
+            width: 100px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="gerb">
+        <img width="140px" src="{% static 'assets/images/gerb.png' %}" alt="">
+    </div>
+    <div class="org-name">
+        <h3>{{ command.org_name }}</h3>
+        <h3>BUYRUQ</h3>
+    </div>
+
+    <span class="line"></span>
+
+    <div class="info">
+        <p>{{ command.date }}</p>
+        <p>{{ command.number }}</p>
+        <p>{{ command.region }}</p>
+    </div>
+
+    <h4 class="title">{{ command.type.title }} to'g'risida</h3>
+
+    <div class="text-body">
+        <p>
+            &emsp; &emsp; <b>{{ command.person_name }}</b> - {{ command.paragraph_1 }}
+        </p>
+        <p>
+            &emsp; &emsp; {{ command.paragraph_2 }}
+        </p>
+    </div>
+
+    <div class="cause">
+        <b>Asos:</b> {{ command.cause }}
+    </div>
+
+    <div class="confirm">
+        <h4>{{ command.confirmer_role }}</h4>
+        <h4>{{ command.confirmer_name }}</h4>
+    </div>
+
+    <footer>
+        <span class="thin-line"></span>
+        <div class="row">
+            <div class="uz-address">
+                <p class="footer-info">
+                    {{ command.address_uz }}
+                </p>
+                <p class="footer-info">
+                    {{ command.phone_number }}
+                </p>
+            </div>
+
+            <div class="footer-qr"></div>
+
+            <div class="en-address">
+                <p class="footer-info">
+                    {{ command.address_en }}
+                </p>
+                <p class="footer-info">
+                    {{ command.phone_number }}
+                </p>
+            </div>
+
+        </div>
+    </footer>
+    
+</body>
+
+</html>
+    

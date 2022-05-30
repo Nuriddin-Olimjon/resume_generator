@@ -33,7 +33,7 @@
             <div class="mb-3" id="search">
                 <div class="row align-items-center">
                     <div class="col-12 text-center p-4">
-                        <h1 class="text-white mb-0">Welcome to resume generator</h2>
+                        <h1 class="text-white mb-0">Welcome to pdf generator</h2>
                     </div>
                     <div class="col-12 text-center p-4 pt-0">
                         {% if request.user.is_authenticated %}
@@ -42,7 +42,7 @@
                         </div>
                         <div class="avatar avatar-xl me-3">
                             <a href="{% url 'logout' %}">
-                                <button class="btn btn-primary">Logout</button>
+                                <button class="btn btn-danger">Logout</button>
                             </a>
                         </div>
                         {% else %}
@@ -64,19 +64,39 @@
             <div class="page-content">
                 <section class="row">
                     <div class="col-12">
-                        {% if request.user.is_authenticated %}
-                        {% else %}
                         <div class="card bg-secondary">
-                            <div class="card-header text-center bg-secondary">
-                                <h2 class="text-white">Register or login to our website to use this template</h1>
-                            </div>
-                            <div class="card-content text-center pb-4">
-                                <a href="{% static 'resume_template.pdf' %}">
-                                    <img src="{% static 'template.png' %}" width="500px" alt="template">
-                                </a>
+                            {% if not request.user.is_authenticated %}
+                                <div class="card-header text-center bg-secondary">
+                                    <h2 class="text-white">Register or login to our website to use these templates</h1>
+                                </div>
+                            {% endif %}
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="card-content text-center pb-4">
+                                        {% if request.user.is_authenticated %}
+                                            <a class="d-block m-3" href="">
+                                                <button class="btn btn-primary">Generate Resume pdf</button>
+                                            </a>
+                                        {% endif %}
+                                        <a href="{% static 'resume_template.pdf' %}">
+                                            <img src="{% static 'template.png' %}" width="500px" alt="template">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card-content text-center pb-4">
+                                        {% if request.user.is_authenticated %}
+                                            <a class="d-block m-3" href="{% url 'dismission' %}">
+                                                <button class="btn btn-primary">Generate Dismission pdf</button>
+                                            </a>
+                                        {% endif %}
+                                        <a href="{% static 'resume_template.pdf' %}">
+                                            <img src="{% static 'template.png' %}" width="500px" alt="template">
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        {% endif %}
                     </div>
                 </section>
             </div>

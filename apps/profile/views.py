@@ -73,3 +73,4 @@ def send_activation_link(domain, user_id, template):
     )  
     email.send()
     print("Email sent successfully!")
+
